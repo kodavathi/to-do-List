@@ -2,6 +2,7 @@ tasks=[]
 while True:
     print("\nOptions:\n1. Display to-do list\n2. Add a task\n3. Mark a task as completed\n4. Remove a task\n5. Quit")
     c=int(input("Enter your choice: "))
+    #Display to-do list
     if(c==1):
         if(c==1):
             if(tasks==[]):
@@ -11,11 +12,13 @@ while True:
                     status="Done" if task["done"] else "Not Done"
                     print(f"{index}. {task['task']} ({status})")
                     
+    #Add a task
     if(c==2):
         task=input("Enter the task: ")
         tasks.append({"task":task,"done":False})
         print("Task '%s' added to your to-do list."%task,"\n")
-        
+
+    #Mark a task as completed
     if(c==3):
         print("To-Do List:")
         for index, task in enumerate(tasks, start=1):
@@ -27,7 +30,8 @@ while True:
             print("Task ",tindex," marked as completed.\n")
         else:
             print("Invalid task number. Please enter a valid task number.\n")
-            
+
+    #Remove a task
     if(c==4):
         print("To-Do List:")
         count=1
@@ -42,7 +46,8 @@ while True:
         else:
             print("Invalid task number. Please enter a valid task number.\n")
         
-        
+
+    #quit
     if(c==5):
         break
     
